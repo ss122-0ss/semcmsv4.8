@@ -2,7 +2,8 @@
 
 ## 1. We should log in to the Web Administrator Console.
 
-![image-20240326165720634](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326165720634.png)
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/2061afa7-35a9-45e5-a298-a2b385c48188)
+
 
 Choose a jpg webshell,whose content is
 
@@ -10,40 +11,34 @@ Choose a jpg webshell,whose content is
  <?php phpinfo();?>
 ```
 
-![image-20240326170256513](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326170256513.png)
+
 
 ### Afterward, click the "Submit" button, and then interupt and observe the HTTP request in Burp Suite.
 
 
-
-![image-20240326170745700](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326170745700.png)
-
-
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/87eb60a3-e2b1-4673-939b-16e896dab231)
 
 
 
 ### Manually change the “wname” param to “1.jpg.php:”  andin Burp Suite(see picture below).
 
-![image-20240326171029751](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326171029751.png)
-
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/99cac086-d518-4722-b4cc-c055e2f25aa5)
 
 
 ## And the response will show the path & filename(../Images/projoucts/1.jpg.php) you just uploaded.
 
-
-
 ### **However, due to the characteristics of NTFS, the actual file will appear as a 0kb-sized "111.jpg.php," rather than the "111.jpg.php:.jpg" shown in response.**
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/93e5198b-f40d-492a-bdd3-e96a023e43ca)
 
-![image-20240326171137261](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326171137261.png)
 
 ## 3. (Key point) Rewrite the zero-KB webshell
 
 ### Place the HTTP data packet from the recent "Submit" click into Burp's Repeater, preparing to make modifications before resending it once again.
 
-![image-20240326171506623](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326171506623.png)
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/50aa8980-b5f4-4931-b0bf-4b04591746ad)
 
 
 
 ### By accessing the webshell file from the URL http://localhost/semcms/images/prdoucts/1.jpg.php, the malicious code is executed.
 
-![image-20240326171656760](C:\Users\28162\AppData\Roaming\Typora\typora-user-images\image-20240326171656760.png)
+![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/a53bcc4a-6581-4e6a-a4d4-d04b1e5d6bd6)
