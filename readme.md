@@ -1,5 +1,12 @@
 # Semcms latest version(v4.8) allow Arbitrary file upload when it runs on a windows server whose hard drive patition is NTFS.
 
+- **Exploit Title:**  Semcms latest version(v4.8) allow Arbitrary file upload when it runs on a windows server whose hard drive patition is NTFS.
+- **Date:** 2024-04-01
+- **Exploit Author:** shuo sheng,jixin zhang
+- **Vendor Homepage:** [https://code-projects.org/simple-school-management-in-php-with-source-code/](http://www.sem-cms.com/)
+- **Software Link:** [https://download.code-projects.org/details/d10e92aa-e37f-46fd-9bf8-45878956d7c0](http://www.sem-cms.com/TradeCmsdown/php/semcms_php_4.8.zip)
+- **Version:** Semcms v4.8
+
 ## 1. We should log in to the Web Administrator Console.
 
 ![图片](https://github.com/ss122-0ss/semcmsv4.8/assets/131983607/2061afa7-35a9-45e5-a298-a2b385c48188)
